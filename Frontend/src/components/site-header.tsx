@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="w-full border-b bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40">
       <div className="container mx-auto px-4 h-14 flex items-center gap-4">
-        <Link href="/" className="font-semibold">CrashGuard AI</Link>
+        <Link href="/" className="font-semibold">Crashly AI</Link>
         <nav className="ml-auto flex items-center gap-4">
           <Link href="/login" className={`text-sm ${isActive("/login")}`}>Login</Link>
           <Link href="/register" className={`text-sm ${isActive("/register")}`}>Register</Link>

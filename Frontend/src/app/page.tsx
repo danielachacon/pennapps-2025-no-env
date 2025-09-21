@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import hero from "@/ChatGPT Image Sep 20, 2025, 11_55_10 PM.png";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -60,52 +62,41 @@ export default function Home() {
   }
 
   return (
-    <main className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-bold tracking-tight mb-4">🚗 CrashGuard AI</h1>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Advanced AI-powered crash detection system with real-time emergency response
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild>
-            <Link href="/login">Sign In</Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/register">Create Account</Link>
-          </Button>
+    <main className="container mx-auto px-4 py-12 min-h-[calc(100vh-3.5rem)] flex items-center">
+      <div className="mb-12 grid md:grid-cols-2 items-center gap-8">
+        <div>
+          <div className="space-y-3">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight">
+              <span className="bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent">
+                Crashly AI
+              </span>
+            </h1>
+            <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl">
+              Real-time crash detection and emergency response powered by modern AI.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Button asChild>
+              <Link href="/login">Sign In</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/register">Create Account</Link>
+            </Button>
+          </div>
+        </div>
+        <div className="hidden md:block md:relative md:w-[50vw] md:h-[420px] md:mr-0 overflow-hidden">
+          <Image
+            src={hero}
+            alt="Crashly AI preview"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <Card>
-          <CardHeader>
-            <CardTitle>Real-time Detection</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Instant crash detection using advanced computer vision and AI models
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Emergency Response</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Automatic 911 assessment and emergency contact notification
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>AI Analysis</CardTitle>
-          </CardHeader>
-          <CardContent>
-            Multi-model AI analysis with YOLO, Cerebras, and Gemini
-          </CardContent>
-        </Card>
-      </div>
-
-      <p className="text-center text-sm text-muted-foreground mt-10">
-        Powered by YOLO, OpenCV, Cerebras, and Gemini AI
-      </p>
+      
     </main>
   )
 }

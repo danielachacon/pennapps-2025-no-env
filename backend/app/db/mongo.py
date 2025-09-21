@@ -1,5 +1,7 @@
 from typing import Any
+from urllib.parse import urlparse
 
+import certifi
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 from ..core.config import settings
 
@@ -10,7 +12,18 @@ _db: AsyncIOMotorDatabase | None = None
 async def get_client() -> AsyncIOMotorClient:
     global _client
     if _client is None:
-        _client = AsyncIOMotorClient(settings.MONGODB_URI)
+        uri = settings.MONGODB_URI
+        client_kwargs: dict[str, Any] = {
+            "serverSelectionTimeoutMS": 30000,
+            "retryWrites": True,
+            "w": "majority",
+        }
+
+        # Use system CA bundle for Atlas/ssl-enabled clusters
+        if uri.startswith("mongodb+srv://") or "mongodb.net" in uri:
+            client_kwargs["tlsCAFile"] = certifi.where()
+
+        _client = AsyncIOMotorClient(uri, **client_kwargs)
     return _client
 
 

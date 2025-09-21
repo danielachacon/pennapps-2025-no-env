@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function InsuranceForm({ onSubmit, loading, error }: Props) {
-  const [insuranceInfo, setInsuranceInfo] = useState<InsuranceInfo>({
+  const [insuranceInfo, setInsuranceInfo] = useState<InsuranceInfo>(() => ({
     policyholder: {
       name: "",
       policy_number: "",
@@ -48,7 +48,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
       address: "",
       car_permanently_garaged_at: "",
     },
-  });
+  }));
 
   const updatePolicyholder = (field: keyof InsuranceInfo['policyholder'], value: string) => {
     setInsuranceInfo(prev => ({
@@ -194,7 +194,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
               />
             </div>
             <div className="md:col-span-3">
-              <label className="block text-sm font-medium mb-1">Name Occupants of Policyholder's Car</label>
+              <label className="block text-sm font-medium mb-1">Name Occupants of Policyholder&apos;s Car</label>
               <input
                 type="text"
                 value={insuranceInfo.policyholder.name_occupants_car}
@@ -210,7 +210,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
           <h2 className="text-lg font-medium mb-4">2. Driver Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Driver's Name</label>
+              <label className="block text-sm font-medium mb-1">Driver&apos;s Name</label>
               <input
                 type="text"
                 required
@@ -241,7 +241,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Driver's License No.</label>
+              <label className="block text-sm font-medium mb-1">Driver&apos;s License No.</label>
               <input
                 type="text"
                 required
@@ -272,7 +272,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Driver's Age</label>
+              <label className="block text-sm font-medium mb-1">Driver&apos;s Age</label>
               <input
                 type="number"
                 required
@@ -331,7 +331,7 @@ export default function InsuranceForm({ onSubmit, loading, error }: Props) {
 
         {/* Automobile Information */}
         <section className="rounded-xl border border-gray-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 backdrop-blur p-6">
-          <h2 className="text-lg font-medium mb-4">3. Policyholder's Automobile</h2>
+          <h2 className="text-lg font-medium mb-4">3. Policyholder&apos;s Automobile</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium mb-1">Make</label>

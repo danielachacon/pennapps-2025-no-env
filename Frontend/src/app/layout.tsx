@@ -7,8 +7,8 @@ import { SiteHeader } from '@/components/site-header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'PennApps 2025',
-  description: 'PennApps 2025 Application',
+  title: 'Crashly AI',
+  description: 'Crashly AI Application',
 }
 
 export default function RootLayout({

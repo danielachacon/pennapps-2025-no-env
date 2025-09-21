@@ -1,4 +1,4 @@
-# Car Crash Detection System - Usage Guide
+# Crashly AI - Usage Guide
 
 ## ✅ Installation Complete!
 

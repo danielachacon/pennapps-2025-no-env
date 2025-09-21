@@ -163,14 +163,14 @@ export default function RegistrationDetailsPage() {
                 <input className="input" value={pd.driver_authorized_by ?? ""} onChange={(e) => handleChange("driver_authorized_by", e.target.value)} />
               </div>
               <div className="md:col-span-3">
-                <label className="block text-sm font-medium">Name Occupants of Policyholder's Car</label>
+                <label className="block text-sm font-medium">Name Occupants of Policyholder&apos;s Car</label>
                 <input className="input" value={pd.policyholder_car_occupants ?? ""} onChange={(e) => handleChange("policyholder_car_occupants", e.target.value)} />
               </div>
             </div>
           </section>
 
           <section className="rounded-xl border border-gray-200 dark:border-neutral-800 p-4">
-            <h2 className="text-lg font-medium mb-4">2. Policyholder's Automobile</h2>
+            <h2 className="text-lg font-medium mb-4">2. Policyholder&apos;s Automobile</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium">Make</label>

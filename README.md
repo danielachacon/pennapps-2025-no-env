@@ -1,6 +1,6 @@
-# 🚗 Percepta - AI Crash Detection System
+# 🚗 Crashly AI - AI Crash Detection System
 
-**PennApps 2025 Project**
+**Crashly AI**
 
 An advanced AI-powered crash detection system that analyzes video footage to identify car crashes in real-time using YOLO object detection and bounding box growth analysis.
 

@@ -9,5 +9,10 @@ torchvision
 transformers
 accelerate
 requests
+motor
+uvicorn
+fastapi
+python-dotenv
+certifi
 
 
