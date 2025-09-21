@@ -8,5 +8,7 @@ async def ping() -> dict:
 
 # Auth routes
 from .auth import router as auth_router
+from .stream import router as stream_router
 
 api_router.include_router(auth_router)
+api_router.include_router(stream_router)

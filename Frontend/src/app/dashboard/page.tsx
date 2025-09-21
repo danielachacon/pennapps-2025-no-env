@@ -150,20 +150,18 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Live Stream */}
+      {/* Live Crash Detection (server-side OpenCV) */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Live Stream</CardTitle>
-          <p className="text-sm text-muted-foreground">Real-time feed integrated from YouTube.</p>
+          <CardTitle>Live Crash Detection</CardTitle>
+          <p className="text-sm text-muted-foreground">OpenCV background/flow heuristic overlay (experimental).</p>
         </CardHeader>
         <CardContent>
-          <div className="relative w-full overflow-hidden rounded-md border pt-[56.25%]">
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/F_JwmmbBA6I?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1"
-              title="Crashly AI Live Stream"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
+          <div className="rounded-md border overflow-hidden">
+            <img
+              src={`http://localhost:8000/api/stream/crash-mjpeg?url=${encodeURIComponent('https://www.youtube.com/watch?v=F_JwmmbBA6I')}`}
+              alt="Crashly AI Crash Detection"
+              className="block w-full h-auto"
             />
           </div>
         </CardContent>

@@ -14,5 +14,6 @@ uvicorn
 fastapi
 python-dotenv
 certifi
+yt-dlp
 
 
