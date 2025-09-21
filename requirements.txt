@@ -1,0 +1,13 @@
+cerebras-cloud-sdk
+opencv-python
+numpy
+scipy
+matplotlib
+Pillow
+torch
+torchvision
+transformers
+accelerate
+requests
+
+

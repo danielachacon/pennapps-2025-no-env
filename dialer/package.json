@@ -1,0 +1,14 @@
+{
+  "name": "pennapps-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack application with Next.js frontend and FastAPI backend",
+  "scripts": {
+    "dev": "./start-dev.sh",
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && source venv/bin/activate && python main.py",
+    "install-all": "cd frontend && npm install && cd ../backend && source venv/bin/activate && pip install -r requirements.txt"
+  },
+  "keywords": ["nextjs", "fastapi", "fullstack", "pennapps"],
+  "author": "",
+  "license": "MIT"
+}
